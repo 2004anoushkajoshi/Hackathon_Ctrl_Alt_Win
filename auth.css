@@ -1,0 +1,440 @@
+/* Login/Signup Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalFade 0.3s ease;
+}
+
+@keyframes modalFade {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark-gray);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--navy-blue);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--navy-blue);
+    outline: none;
+}
+
+.role-selection {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-option {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-option.active {
+    border-color: var(--navy-blue);
+    background: rgba(0, 0, 128, 0.05);
+}
+
+.role-option i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--navy-blue);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    color: var(--navy-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    display: none;
+    padding: 120px 0 60px;
+}
+
+.dashboard-nav {
+    background: var(--gradient-blue);
+    color: var(--white);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dashboard-nav-links li {
+    margin: 0 15px;
+}
+
+.dashboard-nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.dashboard-nav-links a.active {
+    color: var(--orange);
+}
+
+.dashboard-nav-links a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--orange);
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+}
+
+.dashboard-section {
+    display: none;
+    margin-top: 40px;
+}
+
+.dashboard-section.active {
+    display: block;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Filter Section */
+.filter-section {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--navy-blue);
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: var(--white);
+    cursor: pointer;
+}
+
+/* Profile Section */
+.profile-form {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.organizer-request {
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border-left: 4px solid var(--orange);
+}
+
+.organizer-request h3 {
+    color: var(--navy-blue);
+    margin-bottom: 15px;
+}
+
+.request-status {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-approved {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.status-rejected {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Admin Dashboard */
+.admin-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.admin-section h3 {
+    color: var(--navy-blue);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+.user-list, .request-list {
+    display: grid;
+    gap: 15px;
+}
+
+.user-card, .request-card {
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info h4, .request-info h4 {
+    margin-bottom: 5px;
+    color: var(--navy-blue);
+}
+
+.user-info p, .request-info p {
+    color: var(--dark-gray);
+    font-size: 14px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Calendar Styles */
+.calendar-container {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 600;
+    background: var(--gradient-blue);
+    color: var(--white);
+}
+
+.calendar-date {
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-height: 80px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-date:hover {
+    background: var(--light-gray);
+}
+
+.calendar-date.has-event {
+    background: rgba(254, 105, 30, 0.1);
+    border-color: var(--orange);
+}
+
+.calendar-date.current-month {
+    background: var(--white);
+}
+
+.calendar-date.other-month {
+    background: #f8f9fa;
+    color: #6c757d;
+}
+
+.event-indicator {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin: 5px auto 0;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--dark-gray);
+}
+
+.empty-state i {
+    font-size: 60px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    color: var(--navy-blue);
+    margin-bottom: 10px;
+}
+
+/* Responsive Dashboard */
+@media (max-width: 768px) {
+    .dashboard-nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dashboard-nav-links li {
+        margin: 5px 0;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .user-card, .request-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .admin-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 12px;
+    }
+    
+    .calendar-date {
+        padding: 8px;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .role-selection {
+        flex-direction: column;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}

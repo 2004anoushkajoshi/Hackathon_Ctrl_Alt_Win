@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniVerse - College Event Management Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-university"></i>
+                    <span>UniVerse</span>
+                    <div class="tagline">Connecting Students & Events</div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#" id="login-link">Login</a></li>
+                    <li><a href="#" id="signup-link">Sign Up</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>UniVerse - College Event Management</h1>
+                <p>Discover, register, and manage campus events all in one place. Never miss out on the action!</p>
+                <div class="hero-buttons">
+                    <a href="#events" class="btn btn-primary">Explore Events</a>
+                    <a href="#" class="btn btn-secondary" id="hero-login">Login / Signup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="container" id="events">
+        <h2 class="section-title">Featured Events</h2>
+        <div class="events-carousel">
+            <!-- Event cards will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Event Categories Section -->
+    <section class="container categories-section">
+        <h2 class="section-title">Event Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card" data-category="cultural">
+                <div class="category-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h3>Cultural Events</h3>
+                <p>Raas Garba, Freshers, Shobhayatra, Concert</p>
+            </div>
+            <div class="category-card" data-category="creatives">
+                <div class="category-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Creatives</h3>
+                <p>Pottery making, DIY workshop</p>
+            </div>
+            <div class="category-card" data-category="sports">
+                <div class="category-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <h3>Sports</h3>
+                <p>Sportsmania tournaments and competitions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights-section" id="highlights">
+        <div class="container">
+            <h2 class="section-title">Campus Highlights</h2>
+            <div class="animation-container">
+                <div class="sky"></div>
+                <div class="ground"></div>
+                
+                <!-- Scenery -->
+                <div class="building building-1"></div>
+                <div class="building building-2"></div>
+                <div class="building building-3"></div>
+                <div class="building building-4"></div>
+                <div class="building building-5"></div>
+                
+                <div class="tree tree-1"></div>
+                <div class="tree tree-2"></div>
+                <div class="tree tree-3"></div>
+                <div class="tree tree-4"></div>
+                <div class="tree tree-5"></div>
+                <div class="tree tree-6"></div>
+                
+                <!-- Curvy Road -->
+                <svg class="road" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="road-path" d="M0,50 Q250,30 500,70 Q750,10 1000,50" />
+                    <path class="road-line" d="M0,50 Q250,30 500,70 Q750,10 1000,50" />
+                </svg>
+                
+                <!-- Text Markers -->
+                <div class="text-marker marker-1">Cultural Events<br>Raas Garba & More</div>
+                <div class="text-marker marker-2">Creative Workshops<br>Pottery & DIY</div>
+                <div class="text-marker marker-3">Sports Tournaments<br>Sportsmania</div>
+                
+                <!-- Auto Rickshaw -->
+                <div class="auto-rickshaw">
+                    <div class="body">
+                        <div class="roof"></div>
+                        <div class="driver"></div>
+                    </div>
+                    <div class="wheel front-wheel">
+                        <div class="wheel-inner"></div>
+                    </div>
+                    <div class="wheel back-wheel">
+                        <div class="wheel-inner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">Start Tour</button>
+                <button id="pauseBtn" class="btn btn-secondary">Pause</button>
+                <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="form-title" id="modal-title">Login to Your Account</h2>
+            <div class="role-selection">
+                <div class="role-option active" data-role="student">
+                    <i class="fas fa-user-graduate"></i>
+                    <div>Student</div>
+                </div>
+                <div class="role-option" data-role="admin">
+                    <i class="fas fa-user-shield"></i>
+                    <div>Admin</div>
+                </div>
+            </div>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div id="signup-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname">
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="submit-btn">Login</button>
+                <div class="form-footer">
+                    <p id="toggle-form">Don't have an account? <a href="#" id="toggle-link">Sign Up</a></p>
+                    <p><a href="index.html">Go to Home Page</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard" style="display: none;">
+        <!-- Dashboard content will be loaded by JavaScript -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>UniVerse</h3>
+                    <p>Your one-stop platform for managing and discovering campus events.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> University Campus</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@universe.edu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 UniVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/admin.js"></script>
+    <script src="scripts/events.js"></script>
+    <script src="scripts/animations.js"></script>
+</body>
+</html>

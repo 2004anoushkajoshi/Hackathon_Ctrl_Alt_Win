@@ -1,0 +1,286 @@
+/* Highlights Section with Auto Rickshaw Animation */
+.highlights-section {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    padding: 80px 0;
+}
+
+.animation-container {
+    position: relative;
+    height: 400px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sky and ground */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to bottom, #87CEEB, #E0F7FF);
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, #8B4513, #A0522D);
+}
+
+/* Curvy road */
+.road {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.road-path {
+    fill: none;
+    stroke: #555;
+    stroke-width: 40;
+}
+
+.road-line {
+    fill: none;
+    stroke: yellow;
+    stroke-width: 4;
+    stroke-dasharray: 20, 20;
+}
+
+/* Auto Rickshaw */
+.auto-rickshaw {
+    position: absolute;
+    bottom: 95px;
+    left: -100px;
+    width: 100px;
+    z-index: 10;
+    transition: all 0.1s linear;
+}
+
+.body {
+    width: 80px;
+    height: 40px;
+    background: #FF6B35;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.roof {
+    width: 60px;
+    height: 15px;
+    background: #E5532B;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.wheel {
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.front-wheel { right: 10px; }
+.back-wheel { left: 10px; }
+
+.wheel-inner {
+    width: 8px;
+    height: 8px;
+    background: #666;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.driver {
+    width: 12px;
+    height: 20px;
+    background: #333;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    border-radius: 3px;
+}
+
+/* Text markers along the road */
+.text-marker {
+    position: absolute;
+    bottom: 160px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    transform: translateX(-50%);
+    transition: opacity 0.5s;
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #FF6B35;
+    text-align: center;
+    min-width: 150px;
+}
+
+.text-marker::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.7);
+}
+
+.marker-1 { left: 15%; }
+.marker-2 { left: 30%; }
+.marker-3 { left: 50%; }
+.marker-4 { left: 70%; }
+.marker-5 { left: 85%; }
+
+/* Scenery elements */
+.building {
+    position: absolute;
+    bottom: 60px;
+    width: 40px;
+    height: 120px;
+    background: #aaccff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tree {
+    position: absolute;
+    bottom: 60px;
+    width: 10px;
+    height: 60px;
+    background: #8B4513;
+}
+
+.tree::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: #228B22;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.building-1 { left: 10%; height: 100px; background: #7aa0ff; }
+.building-2 { left: 25%; height: 140px; background: #5d8cff; }
+.building-3 { left: 40%; height: 90px; background: #7aa0ff; }
+.building-4 { left: 65%; height: 120px; background: #5d8cff; }
+.building-5 { left: 80%; height: 110px; background: #7aa0ff; }
+
+.tree-1 { left: 5%; }
+.tree-2 { left: 20%; }
+.tree-3 { left: 35%; }
+.tree-4 { left: 55%; }
+.tree-5 { left: 75%; }
+.tree-6 { left: 95%; }
+
+/* Control buttons */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Features section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: #FF6B35;
+}
+
+/* Mobile Responsive for Animation */
+@media (max-width: 768px) {
+    .animation-container {
+        height: 300px;
+    }
+    
+    .text-marker {
+        font-size: 0.8rem;
+        bottom: 130px;
+        min-width: 120px;
+    }
+    
+    .auto-rickshaw {
+        width: 80px;
+    }
+    
+    .body {
+        width: 64px;
+        height: 32px;
+    }
+    
+    .roof {
+        width: 48px;
+        height: 12px;
+        left: 8px;
+    }
+    
+    .wheel {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animation-container {
+        height: 250px;
+    }
+    
+    .text-marker {
+        font-size: 0.7rem;
+        bottom: 110px;
+        min-width: 100px;
+        padding: 8px 10px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - UniVerse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-university"></i>
+                    <span>UniVerse</span>
+                    <div class="tagline">Connecting Students & Events</div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="index.html#highlights">Highlights</a></li>
+                    <li><a href="#" id="login-link">Login</a></li>
+                    <li><a href="#" id="signup-link">Sign Up</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About UniVerse</h1>
+            <p>Transforming campus event management through innovation and technology</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>UniVerse was created to bridge the gap between students and campus events. We believe that every student should have equal opportunity to discover, participate in, and even organize events that shape their college experience.</p>
+                </div>
+                <div class="mission-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose UniVerse?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Easy Event Discovery</h3>
+                    <p>Browse through categorized events with detailed descriptions and registration information.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Student-Centric</h3>
+                    <p>Designed by students for students, with intuitive interfaces that make event management simple.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access UniVerse from any device - your smartphone, tablet, or computer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Explore Campus Events?</h2>
+            <p>Join thousands of students already using UniVerse to enhance their college experience.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary" id="about-login">Get Started</a>
+                <a href="index.html#events" class="btn btn-secondary">Browse Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>UniVerse</h3>
+                    <p>Your one-stop platform for managing and discovering campus events.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 UniVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="form-title" id="modal-title">Login to Your Account</h2>
+            <div class="role-selection">
+                <div class="role-option active" data-role="student">
+                    <i class="fas fa-user-graduate"></i>
+                    <div>Student</div>
+                </div>
+                <div class="role-option" data-role="admin">
+                    <i class="fas fa-user-shield"></i>
+                    <div>Admin</div>
+                </div>
+            </div>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div id="signup-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname">
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="submit-btn">Login</button>
+                <div class="form-footer">
+                    <p id="toggle-form">Don't have an account? <a href="#" id="toggle-link">Sign Up</a></p>
+                    <p><a href="index.html">Go to Home Page</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard" style="display: none;">
+        <!-- Dashboard content will be loaded by JavaScript -->
+    </section>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
